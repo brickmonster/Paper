@@ -1459,6 +1459,15 @@
                      }
                  } else {
                      this.jumpInLiquid(FluidTags.LAVA);
+@@ -2776,7 +_,7 @@
+ 
+         if (this.getControllingPassenger() instanceof Player player && this.isAlive()) {
+             this.travelRidden(player, vec3);
+-        } else if (this.canSimulateMovement()) {
++        } else if (this.canSimulateMovement() && this.isEffectiveAi()) { // Paper - partial fix for MC-296348
+             this.travel(vec3);
+         }
+ 
 @@ -2791,7 +_,7 @@
          profilerFiller.pop();
          if (this.level() instanceof ServerLevel serverLevel) {

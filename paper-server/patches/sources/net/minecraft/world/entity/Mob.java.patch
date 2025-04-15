@@ -417,6 +417,15 @@
          }
  
          return flag;
+@@ -1190,7 +_,7 @@
+ 
+     @Override
+     public boolean canSimulateMovement() {
+-        return super.canSimulateMovement() && !this.isNoAi();
++        return super.canSimulateMovement(); // && !this.isNoAi(); // Paper - partial fix for MC-296348
+     }
+ 
+     @Override
 @@ -1270,7 +_,7 @@
              float knockback = this.getKnockback(source, damageSource);
              if (knockback > 0.0F && source instanceof LivingEntity livingEntity) {
